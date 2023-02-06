@@ -17,5 +17,7 @@ jobs:
     steps:
       - name: Download repo
         uses: actions/checkout@v3
-      - name: List contents
+      - name: List directory contents
         run: ls
+      - name: Display contents of a file
+        run: cat new.txt
