@@ -3,9 +3,9 @@ name: CI
 on:
   push:
     branches: ['main']
-    paths:
-      - '**'
-      - '!./github/**'
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
 
 jobs:
   build:
