@@ -3,9 +3,9 @@ name: CI
 on:
   push:
     branches: ['main']
-    paths-ignore:
-      - '.github/**'
-      - 'README.md'
+#    paths-ignore:
+#      - '.github/**'
+#      - 'README.md'
 
 jobs:
   build:
@@ -15,5 +15,12 @@ jobs:
         uses: actions/checkout@v3
       - name: List directory contents
         run: ls
-      - name: Display contents of a file
-        run: cat new.txt
+      - name: Setup python
+        uses: actions/setup-python@v4.5.0
+        with:
+          python-version: 3.9.8
+      - name: Test requirements.txt file
+        run: |
+         pip install -r req.txt
+         echo "All Packages"
+         pip list
